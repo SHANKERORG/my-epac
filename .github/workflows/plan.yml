@@ -50,9 +50,10 @@ jobs:
       - name: Plan
         uses: azure/powershell@v2
         with:
-          inlineScript: '../../Scripts/Deploy/Build-DeploymentPlans.ps1 -PacEnvironmentSelector ${{ inputs.pacEnvironmentSelector }} -InformationAction Continue'
+          #inlineScript: '../../Scripts/Deploy/Build-DeploymentPlans.ps1 -PacEnvironmentSelector ${{ inputs.pacEnvironmentSelector }} -InformationAction Continue'
           azPSVersion: "latest"
-
+          inlineScript: './Scripts/Deploy/Build-DeploymentPlans.ps1 -PacEnvironmentSelector ${{ inputs.pacEnvironmentSelector }} -InformationAction Continue'
+          
       - name: Detect Plan File
         id: detectPlan
         run: |
